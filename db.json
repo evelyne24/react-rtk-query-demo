@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "name": "Mr. Bernadette Murphy",
+      "id": 1
+    },
+    {
+      "name": "Lana Johnson",
+      "id": 3
+    }
+  ],
+  "albums": [
+    {
+      "userId": 3,
+      "title": "Ergonomic Wooden Shoes",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "title": "Bespoke Metal Shoes",
+      "id": 2
+    }
+  ],
+  "photos": [
+    {
+      "albumId": 1,
+      "url": "https://loremflickr.com/150/150/abstract?lock=74020",
+      "id": 3
+    },
+    {
+      "albumId": 2,
+      "url": "https://loremflickr.com/150/150/abstract?lock=99094",
+      "id": 4
+    },
+    {
+      "albumId": 2,
+      "url": "https://loremflickr.com/150/150/abstract?lock=10924",
+      "id": 5
+    },
+    {
+      "albumId": 2,
+      "url": "https://loremflickr.com/150/150/abstract?lock=78223",
+      "id": 6
+    },
+    {
+      "albumId": 2,
+      "url": "https://loremflickr.com/150/150/abstract?lock=47452",
+      "id": 7
+    },
+    {
+      "albumId": 2,
+      "url": "https://loremflickr.com/150/150/abstract?lock=2596",
+      "id": 8
+    }
+  ]
+}
