@@ -1,12 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { faker } from '@faker-js/faker';
-
-// DEV ONLY!!!
-const pause = (duration) => {
-	return new Promise((resolve) => {
-		setTimeout(resolve, duration);
-	});
-};
+import { pause } from './utils';
 
 const albumsApi = createApi({
 	reducerPath: 'albums',
@@ -20,17 +14,6 @@ const albumsApi = createApi({
 	}),
 	endpoints(builder) {
 		return {
-			removeAlbum: builder.mutation({
-				invalidatesTags: (result, error, album) => {
-					return [{ type: 'Album', id: album.id }];
-				},
-				query: (album) => {
-					return {
-						url: `/albums/${album.id}`,
-						method: 'DELETE',
-					};
-				},
-			}),
 			addAlbum: builder.mutation({
 				invalidatesTags: (result, error, user) => {
 					return [{ type: 'UserAlbum', id: user.id }];
@@ -43,6 +26,17 @@ const albumsApi = createApi({
 							userId: user.id,
 							title: faker.commerce.productName(),
 						},
+					};
+				},
+			}),
+			removeAlbum: builder.mutation({
+				invalidatesTags: (result, error, album) => {
+					return [{ type: 'Album', id: album.id }];
+				},
+				query: (album) => {
+					return {
+						url: `/albums/${album.id}`,
+						method: 'DELETE',
 					};
 				},
 			}),
